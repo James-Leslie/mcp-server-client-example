@@ -3,7 +3,6 @@ import asyncio
 from contextlib import AsyncExitStack
 from pathlib import Path
 
-import httpx
 from anthropic import Anthropic
 from dotenv import load_dotenv
 from mcp import ClientSession, StdioServerParameters
@@ -20,11 +19,7 @@ class MCPClient:
         # Initialize session and client objects
         self.session: ClientSession | None = None
         self.exit_stack = AsyncExitStack()
-        self.anthropic = Anthropic(
-            http_client=httpx.Client(
-                proxy="http://at-proxy.aucklandtransport.govt.nz:8080"
-            )
-        )
+        self.anthropic = Anthropic()
 
     async def connect_to_server(self, server_script_path: str):
         """Connect to an MCP server
