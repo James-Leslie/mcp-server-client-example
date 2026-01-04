@@ -1,0 +1,15 @@
+{
+	"servers": {
+		"weather": {
+			"type": "stdio",
+			"command": "uv",
+			"args": [
+				"--directory",
+				"C:/Users/JamesLes1/Repos/mcp-weather",
+				"run",
+				"weather.py"
+			]
+		}
+	},
+	"inputs": []
+}
